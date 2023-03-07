@@ -29,16 +29,33 @@ public:
 	{
 		ofstream Group;
 		Group.open("Group.txt", ios::out);
-		for (Student& i : group)
+		bool flag = true;
+		for (Student i : group)
 		{
-			if (i != s)
+			if (!(i != s))
+				flag = false;
+
+		}
+		try
+		{
+			if (flag)
+				throw exception("This student doesn't exist in this group");
+			for (Student& i : group)
 			{
-				Group << "Name: " << i.getName() << endl;
-				Group << "Surname: " << i.getSurname() << endl;
-				Group << "Age: " << i.getAge() << endl;
-				Group << "Average: " << i.getAverage() << endl << endl;
+				if (i != s)
+				{
+					Group << "Name: " << i.getName() << endl;
+					Group << "Surname: " << i.getSurname() << endl;
+					Group << "Age: " << i.getAge() << endl;
+					Group << "Average: " << i.getAverage() << endl << endl;
+				}
 			}
 		}
+		catch (const exception& ex)
+		{
+			cout<<ex.what();
+		}
+		 
 		Group.close();
 	}
 
