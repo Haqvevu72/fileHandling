@@ -13,7 +13,7 @@ int main()
 	vector<Student> group{ s1, s2, s3 };
 
 	Group g("FBMS_2_22_3", group);
-	g.studentsAddTextFile();
+	//g.studentsAddTextFile();
 	g.delstudFile(s1);
 }
 

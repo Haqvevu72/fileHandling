@@ -1,0 +1,10 @@
+Name: Emil
+Surname: Tagiyev
+Age: 28
+Average: 12
+
+Name: Qalib
+Surname: Ismayilov
+Age: 16
+Average: 12
+

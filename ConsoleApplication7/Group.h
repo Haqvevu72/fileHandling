@@ -30,6 +30,15 @@ public:
 		ofstream Group;
 		Group.open("Group.txt", ios::out);
 		bool flag = true;
+		try
+		{
+			if (Group.tellp()==0)
+				throw exception("File is empty!");
+		}
+		catch (const exception& ex)
+		{
+			cout << ex.what() << endl;
+		}
 		for (Student i : group)
 		{
 			if (!(i != s))
@@ -53,7 +62,7 @@ public:
 		}
 		catch (const exception& ex)
 		{
-			cout<<ex.what();
+			cout<<ex.what()<<endl;
 		}
 		 
 		Group.close();
